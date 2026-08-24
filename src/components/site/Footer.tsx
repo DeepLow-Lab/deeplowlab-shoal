@@ -2,7 +2,7 @@ import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 const SOCIALS = [
-  { label: "GitHub", href: "https://github.com", Icon: Github },
+  { label: "GitHub", href: "https://github.com/DeepLow-Lab", Icon: Github },
   { label: "LinkedIn", href: "https://linkedin.com", Icon: Linkedin },
   { label: "X", href: "https://x.com", Icon: Twitter },
   { label: "Instagram", href: "https://instagram.com", Icon: Instagram },
