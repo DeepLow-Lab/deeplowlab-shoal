@@ -17,7 +17,7 @@ export const SHOAL_SERVICES: ShoalService[] = [
   {
     id: "static",
     name: "Static Website",
-    price: "Starting at $200",
+    price: "Starting at $150",
     blurb: "A fast, hand-built site for businesses and portfolios.",
     features: [
       "HTML / CSS / JavaScript build",
@@ -28,7 +28,7 @@ export const SHOAL_SERVICES: ShoalService[] = [
   {
     id: "dynamic",
     name: "Dynamic Website",
-    price: "Starting at $400",
+    price: "Starting at $450",
     blurb: "Content that changes, users that log in, data that persists.",
     features: [
       "Database",
