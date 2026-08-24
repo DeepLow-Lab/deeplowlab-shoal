@@ -4,7 +4,7 @@
 
 DeepLow Lab is a technology company working across efficient software, custom PCB design, computer vision, and physical AI. This repository contains the source for the DeepLow Lab website, including **Shoal** — DeepLow Lab's web development department.
 
-🔗 Live site: `deeplowlab.dellyjifferson.engineer` *(subdomain hosting, phase one)*
+🔗 Live site: `deeplowlab.tech` *(hosting, phase one)*
 
 ---
 
@@ -95,7 +95,7 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key
 
 ## Deployment
 
-The site is deployed on Netlify under a subdomain of an existing domain (`dellyjifferson.engineer`) as a phase-one solution, with a dedicated domain planned for a later stage of the company.
+The site is deployed on Netlify under a the domain (`deeplowlab.tech`).
 
 ---
 
