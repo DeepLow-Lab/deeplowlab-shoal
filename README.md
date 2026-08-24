@@ -1,100 +1,104 @@
-# DeepLow Lab Shoal
+# DeepLow Lab
 
-I want to turn this HTML/CSS/JS mockup into a real Next.js website. The mockup file is already fixed (orthogonal PCB trace routing, via-transition-synced fork point, and non-compounding parallax using stored original offsets + requestAnimationFrame) — treat it as the reference implementation for visuals and animation logic, not something to redesign.
+**Building from the silicon up.**
 
-PROJECT: DeepLow Lab website (a tech/robotics company with a web-dev sub-department called Shoal)
+DeepLow Lab is a technology company working across efficient software, custom PCB design, computer vision, and physical AI. This repository contains the source for the DeepLow Lab website, including **Shoal** — DeepLow Lab's web development department.
 
-TECH STACK (use exactly this, no substitutions):
-- Next.js with App Router + TypeScript
-- Tailwind CSS for styling — set up the color/type tokens below as a proper tailwind.config.ts theme, not inline hex values
-- Framer Motion for the boot sequence animation and scroll-reveal transitions
-- Fonts loaded via next/font/google: Silkscreen (headlines/wordmarks/numbers only, never body text), Space Grotesk (body copy), JetBrains Mono (small data labels/stats)
-- Deployment target is Netlify — set up the project to be Netlify-compatible (no serverless features that break static/edge export unless necessary)
+🔗 Live site: `deeplowlab.dellyjifferson.engineer` *(subdomain hosting, phase one)*
 
-DESIGN TOKENS (from the mockup, keep exact):
-- --void: #0B0D0F (background)
-- --panel: #14181B (card backgrounds)
-- --trace: #39D98A (DeepLow Lab accent, circuit green)
-- --surface: #4FD1C5 (Shoal accent, teal)
-- --signal: #ECEFEC (primary text)
-- --dim: #7C8A85 (secondary/muted text)
-- --line: #23292C (borders/dividers)
+---
 
-STRUCTURE:
-- Route structure: app/ with the DeepLow Lab core content at "/" and a distinct Shoal section within the same page (anchor-linked, as in the mockup) — keep it a single-page scroll experience for now, not separate routes, matching the mockup's structure (hero → capabilities → via-transition → shoal → footer)
-- Componentize logically: BootSequence, Nav, Hero, CapabilitiesGrid, ViaTransition, ShoalSection, Footer, and a PcbTraceLayer component that owns the SVG trace + parallax logic
-- Extract the trace/parallax logic into a custom hook (e.g. usePcbTrace) so PcbTraceLayer stays clean — this hook must generate an orthogonal-only path (no bezier curves), must compute the fork point from the ViaTransition element's actual DOM position (not a percentage estimate), and must use stored original offsets (captured on mount/resize) rather than live getBoundingClientRect() calls inside the scroll handler, wrapped in requestAnimationFrame. The greet dot should accompanies the user througout all the website, it should get to the end. and make better footer, with social icons but the should respect the design language of DeepLow Lab
-- Boot sequence: replicate the mockup's letter-by-letter "DEEPLOW_LAB" ignition animation using Framer Motion, followed by a FLIP-style animation into the nav's final wordmark position, then reveal the page. Should only play once per session (use sessionStorage so it doesn't replay on internal navigation/reload within the same session)
-- Responsive behavior: mobile (<969px) gets the simplified static trace with no parallax and no traveling pulse, matching the mockup's mobile fallback exactly; desktop (>=969px) gets the full parallax + traveling signal pulse experience
+## About
 
+DeepLow Lab operates at the layer most software companies skip — where code meets copper. The site is structured around two identities under one roof:
 
+- **DeepLow Lab (Core)** — the deep-tech side: efficient software, PCB design, computer vision, and physical AI.
+- **Shoal** — the visible, client-facing web development arm, offering static sites, dynamic web apps, e-commerce, teaching platforms, and custom builds.
 
-PROJECT DOCUMENTATION — IMPORTANT, READ CAREFULLY:
-Create a file that is NOT the README.md (the README.md must still exist normally in the repo, for GitHub visitors). This second file is for my own personal understanding of the codebase, not for public/collaborator use. Requirements for this file:
-- Name it something like PROJECT_GUIDE.md or DEV_GUIDE.md (your choice, just not README.md)
-- Add it to .gitignore so it never gets committed or pushed to the repo
-- Its content should explain, in plain language: what the site does, how the project is structured (folders/components), what each key function/hook does (especially usePcbTrace, the boot sequence logic, and the button/scroll behavior), and anything I'd need to know to modify or extend the site later
-- Write it as if explaining the codebase to me, the site owner, who is not deeply familiar with Next.js internals — clear, practical, not a formal engineering doc
-- Keep it updated as you build — if you add new key functions or components later in this session, append/update this file to reflect them
+The visual identity is inspired by circuit board design: a dot-matrix display font, a dark "PCB substrate" color palette, and a literal signal-trace motif that runs through the page — starting at the DeepLow Lab core and forking outward into Shoal, visually representing the idea of a signal routed from depth to surface.
 
-Build this step by step: start with project scaffolding and Tailwind/font config, then the design tokens, then static layout/sections, then the boot sequence, then the PCB trace + parallax hook, then wire up the buttons, then generate the guide file last (once the structure is final) so it accurately reflects what was actually built.
-Continuing work on the DeepLow Lab / Shoal Next.js site. This prompt updates the button behaviors and adds a new /shoal page. Keep everything from the previous build (design tokens, PcbTraceLayer/usePcbTrace hook, boot sequence, component structure) — this only changes button destinations and adds new pages/components.
+---
 
-UPDATED BUTTON BEHAVIOR:
+## Tech Stack
 
-1. "VIEW WORK" (hero, DeepLow Lab core) — no longer scrolls to Capabilities. On click, show a simple message/modal or inline state indicating the project is ongoing and cannot be visited yet (something like "Project in progress — not viewable yet"). Keep it low-effort: a small toast/modal is fine, doesn't need a new route.
+This project runs on **[TanStack Start](https://tanstack.com/start)** (React 19 + Vite + TypeScript) — the stack used by the [Lovable](https://lovable.dev/) platform this site was built with. It works similarly to Next.js App Router conceptually: files inside `src/routes/` become URLs.
 
-2. "START A PROJECT" (hero, DeepLow Lab core) — opens a placeholder inquiry form (modal or inline section) asking the user to describe their project. This is NOT wired to EmailJS yet — just build the form UI with a textarea/fields and a submit button that I can wire up later. Fields: name, email, project description (textarea), submit button.
+- **TanStack Start** — React 19 + Vite + TypeScript
+- **Tailwind CSS v4** — theme/design tokens configured in CSS (no `tailwind.config.ts`; lives in `src/styles.css`)
+- **Framer Motion** — boot sequence and scroll-reveal animations
+- **EmailJS** — client-side form handling for project inquiries (no backend required currently)
+- **Fonts** — loaded from Google Fonts via a `<link>` tag in `__root.tsx`:
+  - [Silkscreen](https://fonts.google.com/specimen/Silkscreen) — headlines, wordmarks, and numeric labels only
+  - [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) — body copy
+  - [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) — small data-style labels
+- **Deployment**: Netlify
 
-3. "TALK TO SHOAL" (Shoal section, on the main page) — no longer opens mailto or a same-page form. Instead, it navigates to a new page/route at /shoal.
+---
 
-NEW PAGE: /shoal (route: app/shoal/page.tsx)
+## Getting Started
 
-This is a dedicated page for the Shoal web-dev department, in the same visual system (dark theme, teal/#4FD1C5 accent since this is Shoal, Silkscreen for headlines, PCB trace background elements can carry over at reduced/simplified intensity — this is a secondary page, not the main landing experience, so keep it lighter-weight than the homepage).
+```bash
+# Install dependencies
+npm install
 
-Sections on /shoal:
-
-a) Header/hero for the page — short intro reintroducing Shoal ("Shoal, by DeepLow Lab" or similar), with a nav back to the main DeepLow Lab site.
-
-b) Pricing cards grid — one card per service:
-   - Static Website — includes: HTML/CSS/JavaScript build, deployment, domain name setup
-   - Dynamic Website — includes: database, front-end, back-end, deployment, domain name setup
-   - E-commerce — placeholder feature list (you can draft reasonable bullet points: product catalog, cart/checkout, payment integration, deployment, domain name)
-   - Teaching Platform — placeholder feature list (course/content management, user accounts, video/content delivery, deployment, domain name)
-   - Custom — a card with no fixed feature list, just messaging like "Have something else in mind? Tell us about it" 
-   
-   Use placeholder pricing (e.g. "Starting at $XXX" or "Contact for pricing" — I'll fill in real numbers later, just make the price field easy to find/edit in the code, ideally as a simple config object or array at the top of the component, not hardcoded deep in JSX).
-
-   Each pricing card is clickable. Clicking ANY card (including Custom) opens a project-inquiry form (modal or inline) with placeholder fields: name, email, project type (should auto-fill/reflect which card was clicked), and a description textarea. This form should be built to integrate with EmailJS — set it up with emailjs-com (or @emailjs/browser) properly wired for submission, but use placeholder values for service_id, template_id, and public_key (clearly marked as placeholders in the code, e.g. as named constants at the top of the file like SHOAL_EMAILJS_SERVICE_ID = "REPLACE_ME") so I can paste in my real EmailJS credentials afterward without digging through the component.
-
-c) Maintenance note — a clearly visible section or banner stating that ongoing maintenance becomes a paid service starting 3 months after deployment. Keep the tone simple and professional, not buried in fine print.
-
-d) "SEE SHOAL PRODUCTS" button — place this prominently on the page (e.g. near the top or in its own section). Since there are no products yet, clicking it should show a simple "No products yet — check back soon" message (toast, modal, or inline state, your choice, keep it simple).
-
-GENERAL REQUIREMENTS:
-- Keep all new forms/modals accessible (proper labels, focusable, dismissible via Escape/close button)
-- Keep the pricing config (service names, feature lists, prices) in an easily editable single object/array, not scattered across JSX, since I'll be updating prices and offerings over time
-- Update the PROJECT_GUIDE.md (or DEV_GUIDE.md, whichever you created earlier — do NOT create README.md, and make sure this guide file is still listed in .gitignore) to reflect: the new /shoal route, the pricing config location and how to edit it, where the EmailJS placeholder constants are and what I need to replace them with, and how the "View Work" and "Start a Project" placeholder states work.
-
-Build in this order: /shoal page layout and pricing cards first, then the click-to-open-form behavior with EmailJS scaffolding, then the maintenance banner and Shoal Products placeholder button, then update the three homepage button behaviors, then update the guide file last.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e2cad696-6e34-487a-b8c2-8121928abac6).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+# Run the development server
 npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) (or the port shown in your terminal) to view the site locally.
+
+### Environment Variables
+
+This project uses EmailJS for the contact/inquiry forms. Create a `.env.local` file with:
+
+```VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+---
+
+## Project Structure
+
+```src/
+  routes/
+    index.tsx         # DeepLow Lab core (homepage) → "/"
+    shoal.tsx          # Shoal — pricing, services, inquiry forms → "/shoal"
+    __root.tsx         # Shared HTML shell — fonts, meta tags
+  routeTree.gen.ts     # Auto-generated by TanStack Router — never edit directly
+  styles.css           # Tailwind v4 theme + design tokens
+  components/
+    Nav.tsx
+    BootSequence.tsx    # Letter-by-letter logo ignition + FLIP animation into nav
+    Hero.tsx
+    CapabilitiesGrid.tsx
+    ViaTransition.tsx
+    ShoalSection.tsx
+    PcbTraceLayer.tsx   # Renders the PCB trace SVG + parallax/pulse effects
+    Footer.tsx
+  hooks/
+    usePcbTrace.ts      # Trace path generation, scroll-synced signal pulse
+```
+
+> Note: exact file names/locations may vary slightly depending on what Lovable generated — update this section to match the repo once finalized.
+
+---
+
+## Key Features
+
+- **Boot sequence** — an ignition-style animation of the "DEEPLOW_LAB" wordmark on first load, which then animates into its resting position in the nav bar. Plays once per session.
+- **PCB trace signature element** — an orthogonally-routed (right-angle, no curves) SVG trace that runs down the page and forks at the transition into the Shoal section, shifting color from DeepLow Lab's green to Shoal's teal.
+- **Responsive motion** — full parallax and a scroll-synced signal pulse on desktop (≥969px); a simplified, static trace with no parallax on mobile for performance.
+- **Shoal pricing page** (`/shoal`) — service cards (static site, dynamic site, e-commerce, teaching platform, custom) that open an inquiry form on click, submitted via EmailJS.
+
+---
+
+## Deployment
+
+The site is deployed on Netlify under a subdomain of an existing domain (`dellyjifferson.engineer`) as a phase-one solution, with a dedicated domain planned for a later stage of the company.
+
+---
+
+## License
+
+© 2026 DeepLow Lab. All rights reserved.

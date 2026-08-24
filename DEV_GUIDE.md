@@ -60,8 +60,7 @@ Reusable button styles are CSS utilities in the same file: `btn-trace`,
 
 ## 4. Folder map
 
-```
-src/
+```src/
   config/shoalPricing.ts        <- EDIT PRICES HERE
   hooks/usePcbTrace.ts          <- trace geometry + parallax + greet dot
   components/

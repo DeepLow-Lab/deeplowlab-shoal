@@ -17,7 +17,7 @@ export const SHOAL_SERVICES: ShoalService[] = [
   {
     id: "static",
     name: "Static Website",
-    price: "Starting at $XXX",
+    price: "Starting at $200",
     blurb: "A fast, hand-built site for businesses and portfolios.",
     features: [
       "HTML / CSS / JavaScript build",
@@ -28,7 +28,7 @@ export const SHOAL_SERVICES: ShoalService[] = [
   {
     id: "dynamic",
     name: "Dynamic Website",
-    price: "Starting at $XXX",
+    price: "Starting at $400",
     blurb: "Content that changes, users that log in, data that persists.",
     features: [
       "Database",
@@ -41,7 +41,7 @@ export const SHOAL_SERVICES: ShoalService[] = [
   {
     id: "ecommerce",
     name: "E-commerce",
-    price: "Starting at $XXX",
+    price: "Starting at $600",
     blurb: "Sell online with a storefront built to convert.",
     features: [
       "Product catalog",
@@ -54,7 +54,7 @@ export const SHOAL_SERVICES: ShoalService[] = [
   {
     id: "teaching",
     name: "Teaching Platform",
-    price: "Starting at $XXX",
+    price: "Starting at $700",
     blurb: "Courses, students and content delivery in one system.",
     features: [
       "Course / content management",

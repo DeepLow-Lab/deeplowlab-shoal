@@ -6,7 +6,7 @@ const SOCIALS = [
   { label: "LinkedIn", href: "https://linkedin.com", Icon: Linkedin },
   { label: "X", href: "https://x.com", Icon: Twitter },
   { label: "Instagram", href: "https://instagram.com", Icon: Instagram },
-  { label: "Email", href: "mailto:hello@deeplowlab.com", Icon: Mail },
+  { label: "Email", href: "mailto:deeplowlab@gmail.com", Icon: Mail },
 ];
 
 export function Footer() {

@@ -5,9 +5,9 @@ import emailjs from "@emailjs/browser";
  * EMAILJS PLACEHOLDERS — replace these three with your real values.
  * Dashboard: emailjs.com -> Email Services / Email Templates / Account.
  * ------------------------------------------------------------------ */
-export const SHOAL_EMAILJS_SERVICE_ID = "REPLACE_ME_SERVICE_ID";
-export const SHOAL_EMAILJS_TEMPLATE_ID = "REPLACE_ME_TEMPLATE_ID";
-export const SHOAL_EMAILJS_PUBLIC_KEY = "REPLACE_ME_PUBLIC_KEY";
+export const SHOAL_EMAILJS_SERVICE_ID = "service_6qpc93j";
+export const SHOAL_EMAILJS_TEMPLATE_ID = "template_y3iy0hf";
+export const SHOAL_EMAILJS_PUBLIC_KEY = "ebOjswkIDznfWOwK8";
 
 const isConfigured = () => !SHOAL_EMAILJS_SERVICE_ID.startsWith("REPLACE_ME");
 
