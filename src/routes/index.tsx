@@ -82,9 +82,9 @@ function Home() {
 
         <Modal open={startOpen} onClose={() => setStartOpen(false)} title="START A PROJECT">
           <p className="mb-5 text-[13px] font-light leading-[1.6] text-dim">
-            Tell us what you want to build. This form is a placeholder — wire it to email later.
+            Tell us what you want to build.
           </p>
-          <InquiryForm sendEmail={false} />
+          <InquiryForm sendEmail={true} />
         </Modal>
       </div>
     </PcbTraceProvider>
