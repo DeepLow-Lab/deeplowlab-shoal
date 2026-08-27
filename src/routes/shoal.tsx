@@ -10,6 +10,9 @@ import { InquiryForm } from "@/components/site/InquiryForm";
 import { Reveal } from "@/components/site/Reveal";
 import { SHOAL_SERVICES, MAINTENANCE_NOTE } from "@/config/shoalPricing";
 
+const SHOAL_URL = "https://deeplowlab.tech/shoal";
+const DEFAULT_OG_IMAGE = "https://deeplowlab.tech/og-image.png";
+
 export const Route = createFileRoute("/shoal")({
   head: () => ({
     meta: [
@@ -19,13 +22,29 @@ export const Route = createFileRoute("/shoal")({
         content:
           "Shoal builds static sites, dynamic web apps, e-commerce and teaching platforms. Pricing, services and project inquiries.",
       },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { property: "og:title", content: "Shoal — Web Development by DeepLow Lab" },
       {
         property: "og:description",
         content: "Static sites, web apps, e-commerce and teaching platforms, built by DeepLow Lab.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SHOAL_URL },
+      { property: "og:image", content: DEFAULT_OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Shoal — Web Development by DeepLow Lab" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Shoal — Web Development by DeepLow Lab" },
+      {
+        name: "twitter:description",
+        content: "Static sites, web apps, e-commerce and teaching platforms, built by DeepLow Lab.",
+      },
+      { name: "twitter:image", content: DEFAULT_OG_IMAGE },
+      { name: "twitter:image:alt", content: "Shoal — Web Development by DeepLow Lab" },
+    ],
+    links: [
+      { rel: "canonical", href: SHOAL_URL },
     ],
   }),
   component: ShoalPage,

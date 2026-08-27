@@ -12,3 +12,10 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://deeplowlab.tech/sitemap.xml
+
+# Disallow any potential admin or private paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/

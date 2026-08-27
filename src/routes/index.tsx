@@ -12,6 +12,9 @@ import { Footer } from "@/components/site/Footer";
 import { Modal } from "@/components/site/Modal";
 import { InquiryForm } from "@/components/site/InquiryForm";
 
+const HOME_URL = "https://deeplowlab.tech/";
+const DEFAULT_OG_IMAGE = "https://deeplowlab.tech/og-image.png";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -21,6 +24,7 @@ export const Route = createFileRoute("/")({
         content:
           "DeepLow Lab builds efficient software, custom PCBs, computer vision and physical AI — plus web products through Shoal.",
       },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { property: "og:title", content: "DeepLow Lab — Building From The Silicon Up" },
       {
         property: "og:description",
@@ -28,7 +32,23 @@ export const Route = createFileRoute("/")({
           "Efficient software, custom PCBs, computer vision and physical AI, engineered from first principles.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: HOME_URL },
+      { property: "og:image", content: DEFAULT_OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "DeepLow Lab — Building From The Silicon Up" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "DeepLow Lab — Building From The Silicon Up" },
+      {
+        name: "twitter:description",
+        content:
+          "Efficient software, custom PCBs, computer vision and physical AI, engineered from first principles.",
+      },
+      { name: "twitter:image", content: DEFAULT_OG_IMAGE },
+      { name: "twitter:image:alt", content: "DeepLow Lab — Building From The Silicon Up" },
+    ],
+    links: [
+      { rel: "canonical", href: HOME_URL },
     ],
   }),
   component: Home,

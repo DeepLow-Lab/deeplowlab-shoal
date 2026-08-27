@@ -1,0 +1,21 @@
+{
+  "name": "DeepLow Lab",
+  "short_name": "DeepLow Lab",
+  "description": "Hardware, software and physical AI, built from the silicon up.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#0d0d0d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["technology", "software", "hardware"],
+  "lang": "en",
+  "dir": "ltr"
+}
