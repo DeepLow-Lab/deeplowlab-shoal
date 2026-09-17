@@ -15,10 +15,10 @@ export type ShoalService = {
 
 export const SHOAL_SERVICES: ShoalService[] = [
   {
-    id: "static",
-    name: "Static Website",
+    id: "surface",
+    name: "Surface",
     price: "Starting at $150",
-    blurb: "A fast, hand-built site for businesses and portfolios.",
+    blurb: "Simple, professional digital presence.",
     features: [
       "HTML / CSS / JavaScript build",
       "Deployment",
@@ -26,11 +26,16 @@ export const SHOAL_SERVICES: ShoalService[] = [
     ],
   },
   {
-    id: "dynamic",
-    name: "Dynamic Website",
+    id: "systems",
+    name: "Systems",
     price: "Starting at $450",
-    blurb: "Content that changes, users that log in, data that persists.",
+    blurb: "Web applications that do more than inform — they operate.",
     features: [
+      "Dashboards",
+      "Booking systems",
+      "Inventory / customer portals",
+      "E-commerce stores",
+      "Online course platforms",
       "Database",
       "Front-end",
       "Back-end",
@@ -39,29 +44,15 @@ export const SHOAL_SERVICES: ShoalService[] = [
     ],
   },
   {
-    id: "ecommerce",
-    name: "E-commerce",
-    price: "Starting at $600",
-    blurb: "Sell online with a storefront built to convert.",
+    id: "automation",
+    name: "Automation",
+    price: "Starting at $900",
+    blurb: "Business infrastructure, not just a website.",
     features: [
-      "Product catalog",
-      "Cart & checkout",
-      "Payment integration",
-      "Deployment",
-      "Domain name setup",
-    ],
-  },
-  {
-    id: "teaching",
-    name: "Teaching Platform",
-    price: "Starting at $700",
-    blurb: "Courses, students and content delivery in one system.",
-    features: [
-      "Course / content management",
-      "User accounts",
-      "Video & content delivery",
-      "Deployment",
-      "Domain name setup",
+      "Website / form → database",
+      "CRM / notifications",
+      "Analytics / reporting",
+      "Connected workflows",
     ],
   },
   {

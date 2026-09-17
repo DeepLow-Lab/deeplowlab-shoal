@@ -26,8 +26,8 @@ export function Hero({
             THE <span className="text-trace">SILICON</span> UP.
           </h1>
           <p className="mt-5 max-w-[560px] text-[15px] font-light leading-[1.6] text-dim md:mt-7 md:text-[19px]">
-            Efficient software, custom PCBs, computer vision and physical AI — engineered from
-            first principles, not off the shelf.
+            Embedded hardware, computer vision and edge AI for physical-world systems —
+            engineered as one stack, not a list of disconnected services.
           </p>
           <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row md:mt-11 md:gap-4">
             <button type="button" className="btn-trace w-full sm:w-auto" onClick={onViewWork}>

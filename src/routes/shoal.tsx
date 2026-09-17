@@ -20,13 +20,13 @@ export const Route = createFileRoute("/shoal")({
       {
         name: "description",
         content:
-          "Shoal builds static sites, dynamic web apps, e-commerce and teaching platforms. Pricing, services and project inquiries.",
+          "Shoal offers Surface, Systems, Automation and Custom builds — from presence to web applications to workflow automation.",
       },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { property: "og:title", content: "Shoal — Web Development by DeepLow Lab" },
       {
         property: "og:description",
-        content: "Static sites, web apps, e-commerce and teaching platforms, built by DeepLow Lab.",
+        content: "Surface, Systems, Automation and Custom web builds, delivered by DeepLow Lab.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SHOAL_URL },
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/shoal")({
       { name: "twitter:title", content: "Shoal — Web Development by DeepLow Lab" },
       {
         name: "twitter:description",
-        content: "Static sites, web apps, e-commerce and teaching platforms, built by DeepLow Lab.",
+        content: "Surface, Systems, Automation and Custom web builds, delivered by DeepLow Lab.",
       },
       { name: "twitter:image", content: DEFAULT_OG_IMAGE },
       { name: "twitter:image:alt", content: "Shoal — Web Development by DeepLow Lab" },
@@ -80,9 +80,8 @@ function ShoalPage() {
                   WEB WORK, <span className="text-surface">SURFACED.</span>
                 </h1>
                 <p className="mt-5 max-w-[620px] text-[15px] font-light leading-[1.7] text-dim md:text-[18px]">
-                  Shoal is DeepLow Lab's web development department. Same engineering discipline as
-                  the hardware side — applied to sites and web products that load fast, rank well
-                  and stay maintainable.
+                  Shoal is DeepLow Lab's web development department. It turns digital presence,
+                  operational web applications and workflow automation into one clear value ladder.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <a href="#pricing" className="btn-surface w-full text-center sm:w-auto">
@@ -113,7 +112,7 @@ function ShoalPage() {
                   <span className="text-surface">01</span> / SERVICES
                 </div>
                 <h2 className="dot mb-3 text-[20px] leading-[1.4] md:text-[28px]">
-                  Pick a starting point.
+                  Pick the right starting point.
                 </h2>
                 <p className="max-w-[560px] text-[14px] font-light leading-[1.7] text-dim md:text-[16px]">
                   Click any card to open a project inquiry — the type is filled in for you.

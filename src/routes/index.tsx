@@ -22,14 +22,14 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "DeepLow Lab builds efficient software, custom PCBs, computer vision and physical AI — plus web products through Shoal.",
+          "DeepLow Lab builds embedded hardware, computer vision and edge AI for physical-world systems — plus web products through Shoal.",
       },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { property: "og:title", content: "DeepLow Lab — Building From The Silicon Up" },
       {
         property: "og:description",
         content:
-          "Efficient software, custom PCBs, computer vision and physical AI, engineered from first principles.",
+          "Embedded hardware, computer vision and edge AI, engineered as one pipeline for physical-world problems.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: HOME_URL },
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Efficient software, custom PCBs, computer vision and physical AI, engineered from first principles.",
+          "Embedded hardware, computer vision and edge AI, engineered as one pipeline for physical-world problems.",
       },
       { name: "twitter:image", content: DEFAULT_OG_IMAGE },
       { name: "twitter:image:alt", content: "DeepLow Lab — Building From The Silicon Up" },

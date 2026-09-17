@@ -21,8 +21,8 @@ export function Footer() {
             DEEPLOW<span className="text-dim">_LAB</span>
           </div>
           <p className="mt-4 max-w-[280px] font-sans text-[13px] font-light leading-[1.7] text-dim">
-            Building from the silicon up. Hardware, perception and physical AI — plus web work
-            through Shoal.
+            Building from the silicon up. Embedded hardware, perception and edge AI — plus web
+            work through Shoal.
           </p>
         </div>
 

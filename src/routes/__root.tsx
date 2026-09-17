@@ -85,7 +85,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "DeepLow Lab — Building From The Silicon Up" },
-      { name: "description", content: "Hardware, software and physical AI, built from the silicon up." },
+      {
+        name: "description",
+        content: "Embedded hardware, software and edge AI, built from the silicon up.",
+      },
       { name: "author", content: "DeepLow Lab" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "theme-color", content: "#0d0d0d", media: "(prefers-color-scheme: dark)" },
